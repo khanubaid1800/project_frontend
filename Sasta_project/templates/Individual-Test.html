@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static',filename='assets/img/heart18.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Predict the Health For Yor Heart!</h1>
+                            <h2 class="subheading">by giving input of 13 features....</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Fill out the below details to check the predictivity of heart failure.</p>
+                        <div class="my-5">
+                             <form action="{{url_for('predict')}}" method="post", class="indi">
+            <div class="form-floating">
+            <input type="text" name="Gender" placeholder="Gender" required="required" class="input">
+            <input type="text" name="age" placeholder="age " required="required" class="input">
+            <input type="text" name="cigs" placeholder="cigperday" required="required" class="input">
+            <input type="text" name="BPmeds" placeholder="BPmeds" required="required" class="input">
+            <input type="text" name="prevalent stroke" placeholder="prevalent stroke" required="required" class="input">
+            <input type="text" name="prevalent hyp" placeholder="prevalent hyp" required="required" class="input">
+            <input type="text" name="Diabetes" placeholder="Diabetes" required="required" class="input">
+            <input type="text" name="totChol" placeholder="totChol" required="required" class="input">
+            <input type="text" name="sysBP" placeholder="sysBP" required="required" class="input">
+            <input type="text" name="diaBP" placeholder="diaBP" required="required" class="input">
+            <input type="text" name="BMI" placeholder="BMI" required="required" class="input">
+            <input type="text" name="HeartRate" placeholder="HeartRate" required="required" class="input">
+            <input type="text" name="Glucose" placeholder="Glucose" required="required" class="input">
+             </div>
+
+            <button type="submit"  class="btn btn-primary">Predict</button>
+        </form>
+
+        <br>
+        <br>
+        <h2 style="color: blue; font-style:oblique ;">{{ prediction_text }}</h2>
+                                </body>
+                                </html>
+                             
+          {% endblock %}
+       
